@@ -1,2 +1,2 @@
-token = '900297002:AAFJzdG4ous5dgN-uFeLbBbSsB81uEH4aPc'
+token = ''
 db_name = 'testDB.db'
