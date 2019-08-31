@@ -187,7 +187,7 @@ def buy_date(message):
 
 def order_num(message):
     try:
-        if re.match(r"\w+", message.text) is None:
+        if re.search(r'[^\w]', message.text) is not None:
             bot.send_message(message.chat.id, "Введены недопустимые символы, попробуйте снова")
             return bot.register_next_step_handler(message, order_num)
         order = message.text
@@ -392,7 +392,6 @@ def help_message(message):
                      
 Команда /start используется для начала заполнения анкеты. 
 Если анкета была заполнена некорректно, повторно используйте команду /start для рестарта.
-Команда /start доступная в любое время взаимодействия с ботом.
                      
 Команда /continue доступна после того, как Вы заполнили анкету.
 Эта команда начинает диалог с ботом.
