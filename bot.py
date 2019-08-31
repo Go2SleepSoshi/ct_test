@@ -189,7 +189,7 @@ def order_num(message):
     try:
         if re.match(r"\w+", message.text) is None:
             bot.send_message(message.chat.id, "Введены недопустимые символы, попробуйте снова")
-            return bot.register_next_step_handler(message, recieve_date)
+            return bot.register_next_step_handler(message, order_num)
         order = message.text
         order_dict[message.chat.id].order_num = order
         bot.send_message(message.chat.id, "Отправьте фотографию товара")
